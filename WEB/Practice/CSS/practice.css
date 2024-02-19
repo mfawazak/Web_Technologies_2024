@@ -1,0 +1,40 @@
+#div1{
+    background-color: purple;
+    grid-area: a;
+}
+#div2{
+    background-color: aqua;
+    grid-area: b;
+}
+#div3{
+    background-color: yellow;
+    grid-area: c;
+}
+#div4{
+    background-color: blueviolet;
+    grid-area: d;
+}
+#div5{
+    background-color: black;
+    grid-area: e;
+}
+.container{
+    height: 50px;
+}
+.body{
+    display: grid;
+    /* grid-template-columns: repeat(10,1fr); */
+    grid-template-areas:
+    "a . e"
+    "b c d";
+
+    gap: 20px;
+
+    /* height:auto; */
+    overflow: hidden;
+    outline: 1px solid red;
+}
+body{
+    /* height: 100%; */
+    background-color: beige;
+}
