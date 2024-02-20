@@ -19,18 +19,18 @@
     grid-area: e;
 }
 .container{
-    height: 50px;
+    
 }
 .body{
     display: grid;
-    /* grid-template-columns: repeat(10,1fr); */
+    grid-template-columns: repeat(3,1fr);
     grid-template-areas:
     "a . e"
     "b c d";
 
     gap: 20px;
 
-    /* height:auto; */
+    height:auto;
     overflow: hidden;
     outline: 1px solid red;
 }
