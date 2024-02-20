@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
-:root{
-  
-}
-
 #pp {
     width: 12em;
     justify-self: end;
@@ -25,9 +21,8 @@ body{
     place-items: center;
   }
   
-  #right-div {
-    padding-left: 5em;
-    padding-top: 2em;
+  #heading-div {
+    padding: 10px;
   }
   
   #main {
@@ -84,4 +79,13 @@ body{
     transform: scale(1.01);
     background-color: #ddb4af;
   }
-  
+  .table{
+    width: 955px;
+  }
+  .table tr td:nth-child(1){
+      width: 282px;
+  }
+
+  .center{
+    text-align: center;
+  }
