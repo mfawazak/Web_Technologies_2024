@@ -9,6 +9,10 @@
     font-weight: 400;
 }
 
+p,a,li{
+    font-family: "Roboto Serif", serif;
+}
+
 body{
     background: lightblue;
     display: flex;
@@ -228,7 +232,7 @@ a{
         display: flex;
     }
     .left_div{
-        width: 30%;
+        width: 35%;
     }
     .edu{
         font-size: 0.85rem;
