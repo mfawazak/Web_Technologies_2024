@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
 *{
     margin: 0;
@@ -192,6 +193,7 @@ a{
 .edu{
     display: flex;
     width: 100%;
+    justify-content: stretch;
 }
 
 .heading{
@@ -203,7 +205,7 @@ a{
 
 .data{
     display: flex;
-    flex-grow: 1;
+    flex-grow: 2;
     width: 100%;
     text-align: center;
 }
@@ -214,6 +216,9 @@ a{
     width: 33%;
 }
 
+.diviii{
+    width: 100%;
+}
 
 
 
@@ -225,6 +230,9 @@ a{
     .left_div{
         width: 30%;
     }
+    .edu{
+        font-size: 0.85rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -234,5 +242,17 @@ a{
     }
     .left_div{
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .edu{
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .edu{
+        font-size: 0.55rem;
     }
 }
