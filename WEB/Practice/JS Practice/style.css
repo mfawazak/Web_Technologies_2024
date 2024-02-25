@@ -42,7 +42,7 @@
     color: white;
 }
 
-.button:hover {
+.button-hover {
     background-color: #440b15;
     color: white;
     transition: 0.5s ease-in-out;
