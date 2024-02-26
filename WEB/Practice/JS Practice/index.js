@@ -1,7 +1,6 @@
 let display = document.getElementById('display');
-
-
 let buttons = Array.from(document.getElementsByClassName('button'));
+let last_row = Array.from(document.getElementsByClassName('last_row'));
 
 buttons.map( button => {
     button.addEventListener('click', (e) => {
@@ -40,5 +39,27 @@ buttons.map(button => {
     button.addEventListener('mouseleave', (g) =>
     {
         button.classList.remove('button-hover');
+    })
+})
+
+last_row.map(last_row => {
+    last_row.addEventListener('mouseenter', (f) =>
+    {
+        last_row.classList.add('last_row-hover');
+    })
+    last_row.addEventListener('mouseleave', (g) =>
+    {
+        last_row.classList.remove('last_row-hover');
+    })
+})
+
+display.map(display => {
+    display.addEventListener('mouseenter', (f) =>
+    {
+        display.classList.add('last_row-hover');
+    })
+    display.addEventListener('mouseleave', (g) =>
+    {
+        display.classList.remove('last_row-hover');
     })
 })
