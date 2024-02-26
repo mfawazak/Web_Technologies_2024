@@ -52,14 +52,3 @@ last_row.map(last_row => {
         last_row.classList.remove('last_row-hover');
     })
 })
-
-display.map(display => {
-    display.addEventListener('mouseenter', (f) =>
-    {
-        display.classList.add('last_row-hover');
-    })
-    display.addEventListener('mouseleave', (g) =>
-    {
-        display.classList.remove('last_row-hover');
-    })
-})
