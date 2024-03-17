@@ -4,6 +4,7 @@
     align-items: center;
     padding: 5px;
     margin: 5px;
+    overflow: hidden;
 }
 .container .left{
     width: 40%;
@@ -13,6 +14,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
 }
 .container .right{
     width: 60%;
@@ -24,3 +26,20 @@
     flex-direction: column;
     position: relative;
 }
+.end {
+    margin-top: auto;
+}
+
+
+h2{
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    background-color: #f0f0f0;
+    border-radius: 25%/80%;
+    color: #b60a0a;
+    border-color: black;
+    border-style: solid;
+        
+}
+
