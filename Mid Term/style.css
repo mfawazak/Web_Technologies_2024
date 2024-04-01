@@ -1,0 +1,122 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    width: auto;
+    align-items: center;
+    border-bottom: 1px solid cadetblue;
+}
+button{
+    height: fit-content;
+    width: fit-content;
+    margin: 10px;
+    margin-top: 0.5rem;
+}
+.member{
+    background-color: cadetblue;
+    color: white;
+}
+.signin{
+    color: cadetblue;
+    background-color: white;
+}
+.section{
+    color: cadetblue;
+    background-color: white;
+}
+.header h1{
+    margin: 10px;
+    width: min(55vw,300vw);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2%;
+}
+
+.menu1{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.menu1btn{
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+
+}
+
+.menu2{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.menu2btn{
+    cursor: pointer;
+    background-color: transparent;
+    font-size: large;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+}
+
+.ImpInfo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.ImpInfo h2{
+    padding: 1%;
+    background-color: rgb(99, 67, 10);
+    color: white;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+.content .leftcon{
+    width: 75%;
+    padding-right: 2%;
+    border-right: 1px solid cadetblue;
+}
+.content .rightcon{
+    width: 25%;
+    overflow: hidden;
+    padding: 2%;
+}
+.content img{
+    float: left;
+}
+.content h1{
+    border-bottom: 1px solid cadetblue;
+    font-size:x-large;
+}
+.content p{
+    font-size: large;
+    justify-content: center;
+    text-align: center;
+}
+.content .leftcon .d1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.header img{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+.content h3{
+    justify-content: center;
+    text-align: center;
+}
