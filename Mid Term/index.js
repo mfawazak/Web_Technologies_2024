@@ -1,11 +1,15 @@
-// Get the logo element
-const logo = document.querySelector('h1 img');
-
-// Listen for mouseover events on any image within the body
-document.body.addEventListener('mouseover', function(event) {
-  // If the target element is an image
-  if (event.target.tagName === 'IMG') {
-    // Set the logo's title to the image's alt attribute
-    logo.title = event.target.alt;
-  }
-});
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.img');
+    const imageName = document.getElementById('image-name');
+    
+    images.forEach(image => {
+      image.addEventListener('mouseover', function() {
+        const name = this.getAttribute('alt');
+        imageName.textContent = name;
+      });
+      
+      image.addEventListener('mouseout', function() {
+        imageName.textContent = '';
+      });
+    });
+  });
