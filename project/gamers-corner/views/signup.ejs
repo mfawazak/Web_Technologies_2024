@@ -1,0 +1,60 @@
+<div class="vh-100 bg-body-tertiary d-flex justify-content-center align-items-center" data-bs-theme="dark">
+    <div class="p-5 bg-dark border border-2 rounded-2 border-light-subtle">
+        <p class="display-6 bolder text-light text-center mb-5">Sign Up at <span class="border rounded-2 text-bg-success p-2 bold"><strong>Gamers' Corner</strong></span></p>
+        <form class="sign-up-form">
+           <div class="mb-3">
+                <label for="email" class="form-label text-light">Email</label>
+                <input 
+                type="email"
+                id="email" 
+                name="email" 
+                class="form-control"
+                 />
+                <span class="text-danger errors" id="email-err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="firstName" class="form-label text-light">First Name</label>
+                <input 
+                type="text" 
+                id="firstName"
+                name="firstName" 
+                class="form-control"
+                 />
+                <span class="text-danger errors" id="firstname-err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label text-light">Last Name</label>
+                <input 
+                type="text" 
+                id="lastName"
+                name="lastName" 
+                class="form-control"
+                
+                 />
+                <span class="text-danger errors" id="lastname-err"></span>
+            </div>
+           <div class="mb-3">
+                <label for="password" class="form-label text-light">Password</label>
+                <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                class="form-control"
+                />
+                <span class="text-danger errors" id="password-err"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-light">Confirm Password</label>
+                <input 
+                type="password"
+                id="confirmPassword" 
+                class="form-control"
+                />
+            <span class="text-danger errors" id="confirm-pass-err"></span>
+            </div>
+            <button type="button" onclick="onSubmit()" class="btn btn-secondary w-100">Sign Up</button>
+        </form>
+        <p class="w-100 text-center pt-2"><a href="/auth/login">Already a member? Login</a></p>
+    </div>
+    <script src="/js/signup.js" defer></script>
+</div>

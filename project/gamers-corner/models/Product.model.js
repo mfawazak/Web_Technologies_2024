@@ -22,7 +22,7 @@ const productSchema = new Schema({
     },
 
     image: {
-        type: Image,
+        type: String,
         required: true,
     }
 })
