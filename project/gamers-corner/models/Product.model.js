@@ -6,7 +6,7 @@ const productSchema = new Schema({
         required: true
     },
 
-    catergory: {
+    category: {
         type: String,
         required: true
     },
@@ -16,14 +16,23 @@ const productSchema = new Schema({
         required: true
     },
 
-    description: {
+    brand: {
         type: String,
+        required: true
+    },
+
+    features: {
+        type: [String],
         required: true,
     },
 
     image: {
         type: String,
         required: true,
+    },
+
+    quantity: {
+        type: Number,
     }
 })
 

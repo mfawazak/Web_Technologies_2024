@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import cardSchema from './card.model.js';
 
 const userSchema = new Schema({
     firstName: {
@@ -27,6 +28,18 @@ const userSchema = new Schema({
 
     modifiedAt: {
         type: Date,
+    },
+
+    address: {
+        type: String,
+    },
+
+    phone: {
+        type: String,
+    },
+
+    card: {
+        type: cardSchema,
     }
 })
 

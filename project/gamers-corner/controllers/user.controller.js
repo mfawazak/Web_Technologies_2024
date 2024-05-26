@@ -1,36 +1,42 @@
-import User from '../models/user.model.js'
-import  bcrypt from 'bcrypt'
+import User from "../models/user.model.js"
 
-export async function signUp(req, res){
-    const user = await User.findOne({email: req.email}).exec();
-    if(user){
-        res.status(409).json({
-            field: "email",
-            message: "user already exists!",
-        }) 
-        return
-    }
+export async function getProfilePage(req, res){
 
-    const password = await bcrypt.hash(req.body.password, 10);
+    const user = await User.findById({_id: req.session.user.id}).exec();    
+    console.log(user);
 
-    const newUser = new User({...req.body, password});
-    newUser.save();
-    console.log("user successfully added!")
+    res.render("profile", {
+        layout: "./layouts/main.ejs",
+        user,
+        update: req.flash(),
+        card: user.card ? {
+            number: user.card.number,
+            expiry: user.card.expiry,
+            cvv: user.card.cvv,
+        } : {}
+    })
 }
 
-export async function login(req, res){
-    const user = await User.findOne({email: req.body.email}).exec();
-    if(!user){
-        req.flash({"error": "Invalid Credentials"})
-        res.redirect('/auth/login');
-    }else{
-        const match = await bcrypt.compare(req.body.password, user.password)
-        if(match){
-            req.session.user = { name: "aashir" }
-            res.redirect("/")
-        }else{
-            req.flash("error", "Invalid Credentials")
-            res.redirect("/auth/login")
-        }
-    }
+export async function updateProfile(req, res){
+    const form = req.body;
+    await User.findByIdAndUpdate(req.session.user.id, {
+        firstName: form.firstName,
+        lastName: form.lastName,
+        address: form.address,
+        phone: form.phone,
+    })
+
+    req.flash("success", true)
+    res.redirect("/user/profile")
+}
+
+export async function updatePayment(req, res){
+    const form = req.body;
+    const user = await User.findById(req.session.user.id).exec();
+    console.log(form)
+
+    user.card = form;
+    user.save();
+    req.flash("success", true);
+    res.redirect('/user/profile');
 }

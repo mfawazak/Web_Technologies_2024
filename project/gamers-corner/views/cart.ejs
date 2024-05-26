@@ -1,0 +1,35 @@
+<div class="container m-auto d-grid justify-content-center my-5">
+    <% if(products.length == 0) { %>
+        <p> Your Cart is Empty </p>
+    <% } else { %>
+        <h2 class="display-5 text-center mb-4"> Your Cart </h2>
+    <%  for(const item of products) { %>
+        <div class="card mb-3" style="max-width: 705px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="https://fakeimg.pl/600x400?text=Item+Placeholder" class="img-fluid rounded-start" alt="product-image">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"> <%=  item.product.name %> x <%= item.quantity %> </h5>
+                <h6 class="text-secondary"> <%=  item.product.brand %> </h6>
+                <h6 class="text-secondary"> <%=  item.product.category %> </h6>
+                <p class="bg-primary border rounded-2 text-light"> <%=  item.product.price %> </p>
+                <form action="/remove-from-cart" method="POST">
+                    <input type="hidden" name="id" value="<%= item.product._id%>">
+                    <button type="submit" class="btn btn-danger">Remove</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+        <% } %>
+        <p id="total" class="display-6 text-end"></p>
+
+        <div class="container m-auto d-flex justify-content-center">
+            <a class="btn btn-primary" href="/checkout">Checkout</a>
+        </div>
+    <% } %>
+
+    <script src="./js/cart.js" data-products='<%- JSON.stringify(products) %>'></script>
+</div>

@@ -6,6 +6,9 @@ import mongoose from 'mongoose'
 import session from 'express-session'
 import flash from 'express-flash'
 import cookieParser from 'cookie-parser'
+import shopRouter from './routes/shop.router.js'
+import cartRouter from './routes/cart.router.js'
+import userRouter from './routes/user.router.js'
 
 const uri = "mongodb+srv://faaz32929:fawaz32929@gamerscorner.1gjcsxu.mongodb.net/?retryWrites=true&w=majority&appName=GamersCorner"
 
@@ -26,7 +29,7 @@ app.use(flash())
 
 mongoose.connect(uri)
     .then(() => console.log("Connected to mongoDB"))
-    .catch(() => console.log("Error connected to mongoDB"))
+    .catch((e) => console.log(`Error connected to mongoDB: \n ${e}`))
 
 app.listen(3000, () => {
     console.log("server initialized!");
@@ -34,3 +37,6 @@ app.listen(3000, () => {
 
 app.use('/', homeRouter)
 app.use('/auth', authRouter)
+app.use('/shop', shopRouter)
+app.use('/cart', cartRouter)
+app.use('/user', userRouter)
