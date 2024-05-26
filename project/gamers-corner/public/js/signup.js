@@ -83,7 +83,13 @@ function checkValidation(){
         passErr.innerText = "This field is required"
         password.classList.add("border-danger")
         isValid = false;
-    }else{
+    }else if(password.value.length < 8)
+        {
+        passErr.innerText = "Password must be atleast 8 characters"
+        password.classList.add("border-danger")
+        isValid = false;
+        }
+        else{
         passErr.innerText = ""
         password.classList.remove("border-danger")
         isValid = true;

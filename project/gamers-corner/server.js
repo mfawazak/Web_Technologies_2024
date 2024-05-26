@@ -9,6 +9,7 @@ import cookieParser from 'cookie-parser'
 import shopRouter from './routes/shop.router.js'
 import cartRouter from './routes/cart.router.js'
 import userRouter from './routes/user.router.js'
+const SESSION_SECRET = "9484eb9c58c1d67d3e8d5a2843cd134b6b180a02"
 
 const uri = "mongodb+srv://faaz32929:fawaz32929@gamerscorner.1gjcsxu.mongodb.net/?retryWrites=true&w=majority&appName=GamersCorner"
 
@@ -21,7 +22,7 @@ app.use(cookieParser())
 app.use(express.static("public"))
 
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: SESSION_SECRET,
     saveUninitialized: false,
     resave: false,
 }))
@@ -31,7 +32,7 @@ mongoose.connect(uri)
     .then(() => console.log("Connected to mongoDB"))
     .catch((e) => console.log(`Error connected to mongoDB: \n ${e}`))
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("server initialized!");
 })
 
