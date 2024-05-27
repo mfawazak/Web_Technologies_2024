@@ -1,28 +1,37 @@
-    <div class="bg-dark">
-        <h1 class="text-center text-light py-3 mt-3">Start shopping with us!</h1>
-        <div class="row m-3 d-none">
-            <div class="col-sm-8 col-md-6 mx-auto col-lg-5">
-                <input class="form-control" placeholder="filter products by name">
-            </div>
+<div class="bg-dark">
+    <form id="searchForm" class="row m-3">
+        <div class="col-sm-8 col-md-6 mx-auto col-lg-5">
+            <input type="text" id="searchInput" name="search" class="form-control" placeholder="Filter products by name"
+                autocomplete="off">
         </div>
-        </div>
-        <div class="container mx-auto d-flex justify-content-center py-3">
-            <div class="btn-group">
-                <a href="/shop/all" class="btn btn-primary">All</a>
-                <a href="/shop/keyboards" class="btn btn-primary">Keyboards</a>
-                <a href="/shop/mice" class="btn btn-primary">Mice</a>
-                <a href="/shop/headsets" class="btn btn-primary">Headsets</a>
-                <a href="/shop/monitors" class="btn btn-primary">Monitors</a>
-            </div>
-        </div>
-        <div class="alert alert-info text-center py-3">
-            Shop Filter: <%= filter %>
-        </div>
-        <div class="container d-flex justify-content-center gap-4 flex-wrap mb-2">
-            <% products.forEach(card => { %>
-                <%- include("./partials/card.ejs", {card}) %>
-            <% }) %>
-        </div>
-        <script src="/js/shop.js"></script>
+    </form>
+    <div class="search-history">
+        <h5>Recent Searches:</h5>
+        <ul>
+            <% searchHistory.slice().reverse().forEach(function(item) { %>
+                <li><a href="/shop/all?search=<%= encodeURIComponent(item) %>">
+                        <%= item %>
+                    </a></li>
+                <% }) %>
+        </ul>
     </div>
 
+
+    <div class="container d-flex justify-content-center gap-4 flex-wrap mb-2">
+        <% products.forEach(card=> { %>
+            <%- include("./partials/card.ejs", {card}) %>
+                <% }) %>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <% for(let i=1; i <=totalPages; i++) { %>
+                <li class="page-item"><a class="page-link" href="/shop/<%= filter %>/?page=<%= i %>">
+                        <%= i %>
+                    </a></li>
+                <% } %>
+        </ul>
+    </nav>
+
+    <script src="/js/shop.js"></script>
+</div>
