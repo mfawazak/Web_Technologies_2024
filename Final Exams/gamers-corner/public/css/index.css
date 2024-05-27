@@ -1,0 +1,9 @@
+.hero-container{
+    height: 40rem;
+    background: url('/assets/hero-background.webp');
+    background-size: cover;
+}
+
+.hero-gradient{
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+}

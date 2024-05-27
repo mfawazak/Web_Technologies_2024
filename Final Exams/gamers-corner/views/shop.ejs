@@ -1,0 +1,28 @@
+    <div class="bg-dark">
+        <h1 class="text-center text-light py-3 mt-3">Start shopping with us!</h1>
+        <div class="row m-3 d-none">
+            <div class="col-sm-8 col-md-6 mx-auto col-lg-5">
+                <input class="form-control" placeholder="filter products by name">
+            </div>
+        </div>
+        </div>
+        <div class="container mx-auto d-flex justify-content-center py-3">
+            <div class="btn-group">
+                <a href="/shop/all" class="btn btn-primary">All</a>
+                <a href="/shop/keyboards" class="btn btn-primary">Keyboards</a>
+                <a href="/shop/mice" class="btn btn-primary">Mice</a>
+                <a href="/shop/headsets" class="btn btn-primary">Headsets</a>
+                <a href="/shop/monitors" class="btn btn-primary">Monitors</a>
+            </div>
+        </div>
+        <div class="alert alert-info text-center py-3">
+            Shop Filter: <%= filter %>
+        </div>
+        <div class="container d-flex justify-content-center gap-4 flex-wrap mb-2">
+            <% products.forEach(card => { %>
+                <%- include("./partials/card.ejs", {card}) %>
+            <% }) %>
+        </div>
+        <script src="/js/shop.js"></script>
+    </div>
+

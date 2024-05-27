@@ -1,0 +1,31 @@
+<div class="card bg-info-subtle" style="width: 20rem;">
+    <img src="https://fakeimg.pl/600x400?text=Item+Placeholder" class="card-img-top">
+    <div class="card-body">
+        <h4 class="card-title mt-2">
+            <%= card.name %>
+        </h4>
+        <h6 class="card-subtitle mb-2 text-body-secondary">
+            <%= card.brand %>
+        </h6>
+        <p>
+            <%= card.category %>
+        </p>
+        <ul class="list-group list-group-flush">
+        <% card.features.forEach(feature => { %>
+            <li class="list-group-item list-group-item-info">
+                <%= feature %>
+            </li>
+        <% }) %>
+        </ul>
+        <p class="display-6 mt-2 bg-primary px-2 text-light border rounded-2">
+           $ <%= card.price %>
+        </p>
+        <% if(card.quantity > 0) { %>
+            <p class="text-primary">In Stock</p>
+            <button class="btn btn-primary float-end add-btn" onclick="addToCart('<%= card.id %>')" >Add to Cart</button>
+        <% } else { %>
+            <p class="text-secondary">Out of Stock</p>
+            <button disabled class="btn btn-primary float-end add-btn" onclick="addToCart('<%= card.id %>')" >Add to Cart</button>
+        <% } %>
+    </div>
+</div>
